@@ -1,17 +1,19 @@
 services:
-  djdesweb:
-    restart: unless-stopped
-    build: ./djdesweb
-    command: gunicorn djdesweb.wsgi:application --bind 0.0.0.0:8000
+  nodejs_app:
+    build: ./nodejs
+    container_name: nodejs_app_desweb_1
+    command: /bin/sh -c "./start_project.sh"
+    restart: "no"
     volumes:
-      - ./djdesweb:/usr/src/app
+      - ./geoportal:/usr/src/app
     ports:
-      - ${PRODUCTION_DOCKER_DJANGO_API_FORWARDED_PORT}:8000
+      - ${PRODUCTION_NODEJS_FORWARDED_PORT}:5173
     env_file:
       - .env
-      - .env.prod
+      - .env.dev
     networks:
       - postgis_postgis
+
 
 networks:
    postgis_postgis:

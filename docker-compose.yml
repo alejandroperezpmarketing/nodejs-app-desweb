@@ -1,20 +1,20 @@
 #the database djdesweb must be created previously
 
 services:
-  djdesweb:
+  nodejs_app:
+    build: ./nodejs
+    container_name: nodejs_app_desweb_1
+    command: /bin/sh -c "./start_project.sh"
     restart: "no"
-    build: ./djdesweb
-    command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./djdesweb:/usr/src/app
+      - ./geoportal:/usr/src/app
     ports:
-      - ${DEVELOP_DOCKER_DJANGO_API_FORWARDED_PORT}:8000
+      - ${NODEJS_FORWARDED_PORT}:5173
     env_file:
       - .env
       - .env.dev
     networks:
       - postgis_postgis
-
 networks:
    postgis_postgis:
       driver: bridge
