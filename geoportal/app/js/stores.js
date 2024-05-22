@@ -15,13 +15,13 @@ export function insert_store(){
     // handle success
             console.log(response);
             document.getElementById("form-stores-gid").value=response.data.data[0].gid;
-            document.getElementById("form-stores-area").value=response.data.data[0].area;
+            //document.getElementById("form-stores-area").value=response.data.data[0].area;
             document.getElementById("form-stores-message").innerHTML=response.data.message;
         })
         .catch(function (error) {
             // handle error
             console.log(error);
-            document.getElementById("form-buildings-message").innerHTML=error.message;
+            document.getElementById("form-stores-message").innerHTML=error.message;
         })
         .finally(function () {
             // always executed
