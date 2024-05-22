@@ -6,5 +6,6 @@ npm install
 npm audit fix --force
 npm audit
 npm install
-npm start
+#npm run dev
+npm build
 
