@@ -2,6 +2,7 @@ import axios from 'axios';
 import { URL_API, URL_GEOSERVER } from './settings';
 
 export function insert_store(){
+    let client_segment_id=document.getElementById('form-stores-client_segment_id').value;
     let store_name=document.getElementById('form-stores-store_name').value;
     let store_description=document.getElementById('form-stores-store_description').value;
     let geomWkt=document.getElementById('form-stores-geomWkt').value;
@@ -9,7 +10,7 @@ export function insert_store(){
 
 
     axios.post(URL_API + '/appdesweb/insert_store/',
-    {store_name:store_name,store_description:store_description,geomWkt:geomWkt}, {withCredentials: true})
+    {client_segment_id:client_segment_id,store_name:store_name,store_description:store_description,geomWkt:geomWkt}, {withCredentials: true})
     .then(function (response) {
     // handle success
             console.log(response);
