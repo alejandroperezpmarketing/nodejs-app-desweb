@@ -48,21 +48,38 @@
           -->
           Gid: <br>
           <input type="text" id="form-buildings-gid" name = "form-buildings-gid"> <br>
-          Description<br>
-          <textarea rows="5" cols="100" id="form-buildings-descripcion" name="descripcion">Descripcion</textarea><br>
-          Area<br>
-          <!--Disabled because the area is going to be calculated by the database-->
-          <input type="text" id="form-buildings-area" name="form-buildings-area" disabled><br>
+          <!-- name starts-->
+          Name<br>
+          <textarea rows="5" cols="100" id="form-clients-name" name="name">Nombre</textarea><br>
+          <!-- ends starts-->
+
+          <!-- last_name starts-->
+          Last name<br>
+          <input type="text" id="form-clients-last_name" name="last_name"><br>
+          <!-- last_name ends-->
+
+           <!-- age starts-->
+           Age<br>
+           <input type="text" id="form-clients-age" name="age" value="20"><br>
+           <!-- age ends-->
+
+            <!-- sex starts-->
+            sex<br>
+          <input type="text" id="form-clients-sex" name="sex"><br>
+          <!-- sex ends-->
+
+          <!-- geomWkt starts-->
           Geometry WKT<br>
-          <textarea rows="5" cols="100" id="form-buildings-geomWkt" name="geomWkt">polygon((0 0, 1 0, 1 1, 0 1, 0 0))
+          <textarea rows="5" cols="100" id="form-clients-geomWkt" name="geomWkt" value="POINT(725500 4296800)">
           </textarea>
+          <!-- geomWkt ends-->
           <br>
-          <p id="form-buildings-message">Selecciona la operación a realizar: </p>
+          <p id="form-clients-message">Selecciona la operación a realizar: </p>
           <div class="form-login-button-container">
-            <button id="form-building-insert">Insert</button>
-            <button id="form-building-update">Update</button>
-            <button id="form-building-delete">Delete</button>
-            <button id="form-building-select">Select</button>
+            <button id="form-clients-insert">Insert</button>
+            <button id="form-clients-update">Update</button>
+            <button id="form-clients-delete">Delete</button>
+            <button id="form-clients-select">Select</button>
           </div>
         </form>
         <div id="map"></div>

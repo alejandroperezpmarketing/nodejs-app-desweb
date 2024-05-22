@@ -25,6 +25,6 @@ const map = new Map({
 });
 
 //registerEventsStreets();
-//registerEventsClients();
+registerEventsClients();
 registerEventsStores();
 //helloWord();

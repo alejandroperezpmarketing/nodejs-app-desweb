@@ -13,13 +13,13 @@ export function insert_client(){
     .then(function (response) {
     // handle success
             console.log(response);
-            document.getElementById("form-clients-gid").value=response.data.data[0].gid;
-            document.getElementById("form-buildings-message").innerHTML=response.data.message;
+            //document.getElementById("form-clients-gid").value=response.data.data[0].gid;
+            document.getElementById("form-clients-message").innerHTML=response.data.message;
         })
         .catch(function (error) {
             // handle error
             console.log(error);
-            document.getElementById("form-buildings-message").innerHTML=error.message;
+            document.getElementById("form-clients-message").innerHTML=error.message;
         })
         .finally(function () {
             // always executed
