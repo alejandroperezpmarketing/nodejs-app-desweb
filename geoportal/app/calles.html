@@ -46,23 +46,47 @@
           form button
           This is necessary because we want on click a button
           -->
+          <!--gid starts -->
           Gid: <br>
-          <input type="text" id="form-buildings-gid" name = "form-buildings-gid"> <br>
-          Description<br>
-          <textarea rows="5" cols="100" id="form-buildings-descripcion" name="descripcion">Descripcion</textarea><br>
-          Area<br>
-          <!--Disabled because the area is going to be calculated by the database-->
-          <input type="text" id="form-buildings-area" name="form-buildings-area" disabled><br>
+          <input type="text" id="form-streets-gid" name = "form-streets-gid"> <br>
+          <!--GID ends -->
+
+          <!--street_name starts -->
+
+          Nombre de la calle<br>
+          <textarea rows="5" cols="100" id="form-streets-street_name" name="street_name">Descripcion</textarea><br>
+
+          <!--street_name ends -->
+          
+           <!--municipality starts -->
+
+          Municipio<br>
+          <input type="text" id="form-streets-municipality" name="municipality"><br>
+          
+          <!--municipality ends -->
+
+          <!--postal_code starts -->
+
+          Código postal<br>
+          <input type="text" id="form-streets-postal_code" name="postal_code"><br>
+          
+          <!--postal_code ends -->
+
+          <!--geomWkt starts -->
+
           Geometry WKT<br>
-          <textarea rows="5" cols="100" id="form-buildings-geomWkt" name="geomWkt">polygon((0 0, 1 0, 1 1, 0 1, 0 0))
+          <textarea rows="5" cols="100" id="form-streets-geomWkt" name="geomWkt">LINESTRING(-0.3714148661851554 39.45873998256314508, -0.37131826567050574 39.45877833729205975, -0.37044298159677463 39.45914590614246009, -0.37036235769022197 39.45918462154414641)
           </textarea>
+          
+          <!--geomWkt ends -->
+
           <br>
-          <p id="form-buildings-message">Selecciona la operación a realizar: </p>
+          <p id="form-streets-message">Selecciona la operación a realizar: </p>
           <div class="form-login-button-container">
             <button id="form-streets-insert_street">Insert</button>
-            <button id="form-streets-select_street">Update</button>
+            <button id="form-streets-update_street">Update</button>
             <button id="form-streets-delete_street">Delete</button>
-            <button id="form-streets-update_street">Select</button>
+            <button id="form-streets-select_street">Select</button>
           </div>
         </form>
         <div id="map"></div>

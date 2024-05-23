@@ -13,7 +13,7 @@ export function insert_client(){
     .then(function (response) {
     // handle success
             console.log(response);
-            //document.getElementById("form-clients-gid").value=response.data.data[0].gid;
+            document.getElementById("form-clients-gid").value=response.data.data[0].gid;
             document.getElementById("form-clients-message").innerHTML=response.data.message;
         })
         .catch(function (error) {
