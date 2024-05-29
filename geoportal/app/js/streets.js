@@ -96,33 +96,25 @@ export function update_street(){
 }
 
 
-
 export function delete_street(){
-    let gid=document.getElementById('form-buildings-gid').value;
-    axios.get(URL_API + '/appdesweb/building_select_by_gid/',
-    {params:{
-            gid:gid
-        }
-    }, {withCredentials: true})
+    let gid=document.getElementById('form-streets-gid').value;
+    //let client_segment_id=document.getElementById('form-stores-client_segment_id').value;
+    //let store_name=document.getElementById('form-stores-store_name').value;
+    //let store_description=document.getElementById('form-stores-store_description').value;
+    //let geomWkt=document.getElementById('form-stores-geomWkt').value;
+
+    axios.post(URL_API + '/appdesweb/delete_street_by_gid/',{gid:gid})
     .then(function (response) {
     // handle success
             console.log(response);
-            if (response.data.data.length > 0){
-                document.getElementById("form-buildings-gid").value=response.data.data[0].gid;
-                document.getElementById("form-buildings-descripcion").value=response.data.data[0].descripcion;
-                document.getElementById("form-buildings-geomWkt").value=response.data.data[0].st_astext;
-                document.getElementById("form-buildings-area").value=response.data.data[0].area;    
-            }else{
-                document.getElementById("form-buildings-descripcion").value="";
-                document.getElementById("form-buildings-geomWkt").value="";
-                document.getElementById("form-buildings-area").value=""; 
-            }
-            document.getElementById("form-buildings-message").innerHTML=response.data.message;
+            document.getElementById("form-streets-gid").value=response.data.data[0].gid;
+            //document.getElementById("form-stores-area").value=response.data.data[0].area;
+            document.getElementById("form-streets-message").innerHTML=response.data.message;
         })
         .catch(function (error) {
             // handle error
             console.log(error);
-            document.getElementById("form-buildings-message").innerHTML=error.message;
+            document.getElementById("form-streets-message").innerHTML=error.message;
         })
         .finally(function () {
             // always executed
