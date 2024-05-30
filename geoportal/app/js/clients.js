@@ -27,32 +27,43 @@ export function insert_client(){
     });
 }
 
+
 export function select_client(){
-    let gid=document.getElementById('form-buildings-gid').value;
-    axios.get(URL_API + '/appdesweb/building_select_by_gid/',
+    let gid=document.getElementById('form-clients-gid').value;
+    //let name=document.getElementById('form-clients-name').value;
+    //let last_name=document.getElementById('form-clients-last_name').value;
+    //let age=document.getElementById('form-clients-age').value;
+    //let sex=document.getElementById('form-clients-sex').value;
+    //let geomWkt=document.getElementById('form-clients-geomWkt').value;
+    axios.get(URL_API + '/appdesweb/select_client_by_gid/',
     {params:{
             gid:gid
         }
-    }, {withCredentials: true})
+    })
     .then(function (response) {
     // handle success
             console.log(response);
             if (response.data.data.length > 0){
-                document.getElementById("form-buildings-gid").value=response.data.data[0].gid;
-                document.getElementById("form-buildings-descripcion").value=response.data.data[0].descripcion;
-                document.getElementById("form-buildings-geomWkt").value=response.data.data[0].st_astext;
-                document.getElementById("form-buildings-area").value=response.data.data[0].area;    
+                document.getElementById('form-clients-gid').value=response.data.data[0].gid;
+                document.getElementById('form-clients-name').value=response.data.data[0].name;
+                document.getElementById('form-clients-last_name').value=response.data.data[0].last_name;
+                document.getElementById('form-clients-age').value=response.data.data[0].age;
+                document.getElementById('form-clients-sex').value=response.data.data[0].sex;
+                document.getElementById('form-clients-geomWkt').value=response.data.data[0].st_astext;
+
             }else{
-                document.getElementById("form-buildings-descripcion").value="";
-                document.getElementById("form-buildings-geomWkt").value="";
-                document.getElementById("form-buildings-area").value=""; 
+                document.getElementById('form-clients-name').value="";
+                document.getElementById('form-clients-last_name').value="";
+                document.getElementById('form-clients-age').value=""; 
+                document.getElementById('form-clients-sex').value="";
+                document.getElementById('form-clients-geomWkt').value="";
             }
-            document.getElementById("form-buildings-message").innerHTML=response.data.message;
+            document.getElementById("form-clients-message").innerHTML=response.data.message;
         })
         .catch(function (error) {
             // handle error
             console.log(error);
-            document.getElementById("form-buildings-message").innerHTML=error.message;
+            document.getElementById("form-clients-message").innerHTML=error.message;
         })
         .finally(function () {
             // always executed
@@ -60,38 +71,37 @@ export function select_client(){
     });
 }
 
+
+
 export function update_client(){
-    let gid=document.getElementById('form-buildings-gid').value;
-    axios.get(URL_API + '/appdesweb/building_select_by_gid/',
-    {params:{
-            gid:gid
-        }
-    }, {withCredentials: true})
+    let gid=document.getElementById('form-clients-gid').value;
+    let name=document.getElementById('form-clients-name').value;
+    let last_name=document.getElementById('form-clients-last_name').value;
+    let age=document.getElementById('form-clients-age').value;
+    let sex=document.getElementById('form-clients-sex').value;
+    let geomWkt=document.getElementById('form-clients-geomWkt').value;
+
+
+    axios.post(URL_API + '/appdesweb/update_client/',
+    {gid:gid,name:name,age:age,last_name:last_name,sex:sex,geomWkt:geomWkt}, {withCredentials: true})
     .then(function (response) {
     // handle success
             console.log(response);
-            if (response.data.data.length > 0){
-                document.getElementById("form-buildings-gid").value=response.data.data[0].gid;
-                document.getElementById("form-buildings-descripcion").value=response.data.data[0].descripcion;
-                document.getElementById("form-buildings-geomWkt").value=response.data.data[0].st_astext;
-                document.getElementById("form-buildings-area").value=response.data.data[0].area;    
-            }else{
-                document.getElementById("form-buildings-descripcion").value="";
-                document.getElementById("form-buildings-geomWkt").value="";
-                document.getElementById("form-buildings-area").value=""; 
-            }
-            document.getElementById("form-buildings-message").innerHTML=response.data.message;
+            document.getElementById("form-clients-gid").value=response.data.data[0].gid;
+            //document.getElementById("form-stores-area").value=response.data.data[0].area;
+            document.getElementById("form-clients-message").innerHTML=response.data.message;
         })
         .catch(function (error) {
             // handle error
             console.log(error);
-            document.getElementById("form-buildings-message").innerHTML=error.message;
+            document.getElementById("form-clients-message").innerHTML=error.message;
         })
         .finally(function () {
             // always executed
             console.log('Finally')
     });
 }
+
 
 
 
