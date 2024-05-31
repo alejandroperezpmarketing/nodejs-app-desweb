@@ -14,9 +14,9 @@ services:
       - .env
       - .env.dev
     networks:
-      - postgis_postgis
+      - gescont-djdesweb_desweb_postgis
 networks:
-   postgis_postgis:
+   gescont-djdesweb_desweb_postgis:
       driver: bridge
       external: true
 
