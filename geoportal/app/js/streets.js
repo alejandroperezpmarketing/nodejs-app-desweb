@@ -28,8 +28,8 @@ export function insert_street(){
 }
 
 export function select_street(){
-    let gid=document.getElementById('form-buildings-gid').value;
-    axios.get(URL_API + '/appdesweb/building_select_by_gid/',
+    let gid=document.getElementById('form-streets-gid').value;
+    axios.get(URL_API + '/appdesweb/select_street_by_gid/',
     {params:{
             gid:gid
         }
@@ -38,12 +38,14 @@ export function select_street(){
     // handle success
             console.log(response);
             if (response.data.data.length > 0){
-                document.getElementById("form-buildings-gid").value=response.data.data[0].gid;
-                document.getElementById("form-buildings-descripcion").value=response.data.data[0].descripcion;
-                document.getElementById("form-buildings-geomWkt").value=response.data.data[0].st_astext;
+                document.getElementById("form-streets-gid").value=response.data.data[0].gid;
+                document.getElementById("form-streets-street_name").value=response.data.data[0].street_name;
+                document.getElementById("form-streets-municipality").value=response.data.data[0].municipality;
+                document.getElementById("form-streets-postal_code").value=response.data.data[0].postal_code;
+                document.getElementById("form-streets-geomWkt").value=response.data.data[0].st_astext;
                 //document.getElementById("form-buildings-area").value=response.data.data[0].area;    
             }else{
-                document.getElementById("form-buildings-descripcion").value="";
+                document.getElementById("form-streets-gid").value="";
                 document.getElementById("form-buildings-geomWkt").value="";
                 //document.getElementById("form-buildings-area").value=""; 
             }
@@ -63,15 +65,15 @@ export function select_street(){
 
 export function update_street(){
     let gid=document.getElementById('form-streets-gid').value;
-    //let client_segment_id=document.getElementById('form-stores-client_segment_id').value;
-    //let store_name=document.getElementById('form-stores-store_name').value;
-    //let store_description=document.getElementById('form-stores-store_description').value;
-    //let geomWkt=document.getElementById('form-streets-geomWkt').value;
+    let street_name=document.getElementById('form-streets-street_name').value;
+    let municipality=document.getElementById('form-streets-municipality').value;
+    let postal_code=document.getElementById('form-streets-postal_code').value;
+    let geomWkt=document.getElementById('form-streets-geomWkt').value;
 
 
 
     axios.post(URL_API + '/appdesweb/update_street/',
-    {gid:gid,client_segment_id:client_segment_id,store_name:store_name,store_description:store_description,geomWkt:geomWkt}, {withCredentials: true})
+    {gid:gid,street_name:street_name,municipality:municipality,postal_code:postal_code,geomWkt:geomWkt}, {withCredentials: true})
     .then(function (response) {
     // handle success
             console.log(response);
