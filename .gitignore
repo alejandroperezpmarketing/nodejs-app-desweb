@@ -1,3 +1,2 @@
-.env.prod
-pgadmin4
-pgadmin4-prod
+node_modules
+dist
