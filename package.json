@@ -1,11 +1,12 @@
-{
+{ 
   "name": "app",
   "version": "1.0.0",
   "scripts": {
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "dev": "vite --host"
+    "dev": "vite --host",
+    "type": "module"
   },
   "devDependencies": {
     "sass": "^1.77.4",
@@ -19,6 +20,7 @@
     "ieee754": "^1.2.1",
     "nanoid": "^3.3.7",
     "ol": "^9.2.4",
+    "ol-layerswitcher": "^4.1.1",
     "postcss": "^8.4.38",
     "quick-lru": "^6.1.2"
   }

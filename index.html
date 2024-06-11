@@ -1,19 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web develop</title>
-  </head>
-  <body>
-    <div class="container" style="padding-top:2%">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#" style="margin-left: 2%;">Geoportal de Alejandro</a>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap w/ Vite</title>
+
+  <!-- MY STYLES -->
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./scss/styles.scss">
+
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/build/ol.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.13.0/css/ol.css">
+
+	<!-- EXTERNAL JS -->
+    <script type="text/javascript" src="./externalLibs/jquery3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./externalLibs/ol/v6.1.1-dist/ol.js"></script>
+  <script type="text/javascript" src="./externalLibs/ol/v6.1.1-dist/ol-layerswitcher.js"></script>
+  <script src="./externalLibs/bootstrap5/bootstrap.bundle.min.js"></script>
+        
+  <!-- EXTERNAL STYLES -->
+  <link rel="stylesheet" href="./externalLibs/bootstrap5/bootstrap.min.css">
+  <link rel="stylesheet" href="./externalLibs/ol/v6.1.1-dist/ol.css">
+  <link rel="stylesheet" href="./externalLibs/ol/v6.1.1-dist/ol-layerswitcher.css">
+  <!-- MY STYLES -->
+  
+	<!-- MY JS -->
+  <script type="text/javascript" src="./js/showHideElements.js"></script>
+  <script type="text/javascript" src="./main.js"></script>
+  <script type="text/javascript" src="./js/stores.js" type="module"></script>
+
+</head>
+
+<body>
+  <div class="container" style="padding-top:2%">
+    <!--  NAV START -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Geoportal de Alejandro</a>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Clientes <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">Clientes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Tiendas</a>
@@ -23,98 +51,103 @@
             </li>
           </ul>
         </div>
-      </nav>
-    </div>
-
-
-    <div class="container-exterior">
-      <div class="container-interior">
-        <nav id="nav">
-          <h1 id="nav-title">Navega entre las páginas</h1>
-          <p>Estas en la página de <b>tiendas</b></p>
-          <ul class="links">
-            <li class="active"><a href="index.html">Consulta el mercado</a></li> <!-- esto es la  conexión a la tabla de tiendas-->
-            <li><a href="calles.html">Ver las calles</a></li><!-- esto es la  conexión a la tabla de tiendas-->
-            <li><a href="clientes.html">Consulta nuestros clientes</a></li><!-- esto es la  conexión a la tabla de clientes-->
-          </ul>
-        </nav>
-        <form id="form-login" onsubmit="event.preventDefault();">
-          <!-- Prevent default avoids the form be sent on pressing a form button
-          This is necessary because we want on click a button
-           -->
-          <p>Escribe tus credenciales:</p>
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" required minlength="4" maxlength="50" size="50" value="admin">
-          <br>
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required minlength="4" maxlength="50" size="50" value="admin">
-          <br>
-          <label for="result">Result:</label>
-          <input type="text" id="result" name="result">
-           <p id="message">Message: </p>
-          <br><br>
-          <p id="form-login-message">Selecciona la operación a realizar:</p>
-          <div class="form-login-button-container">
-            <button id="button-login">Login</button>
-            <button id="button-logout">Logout</button>
-            <button id="button-test">Test</button>
-          </div>
-        </form>
-        <hr>
-        <!--################################################ START OF THE STORES FORME SECTION ###########################################################################################--> 
-        
-        <form id="form-buildings" onsubmit="event.preventDefault();">
-          <!-- Prevent default avoids the form be sent on pressing a
-          form button
-          This is necessary because we want on click a button
-          -->
-           <!--GID start-->
-          Gid: (Opcional - usalo para extraer información) <br>
-          <input type="text" id="form-stores-gid" name = "form-stores-gid"><br>
-          <!--GID ends-->
-          
-          <!--client_segment_id ends-->
-          Client segment id<br>
-          <textarea rows="5" cols="100" id="form-stores-client_segment_id" name="client_segment_id"></textarea><br>
-          <!--client_segment_id ends-->
-          
-          <!--client_segment_id ends-->
-          Store name<br>
-          <textarea rows="5" cols="100" id="form-stores-store_name" name="store_name">Store name</textarea><br>
-          <!--client_segment_id ends-->
-
-          <!--client_segment_id ends-->
-          Store_description<br>
-          <textarea rows="5" cols="100" id="form-stores-store_description" name="store_description">Store description</textarea><br>
-          <!--client_segment_id ends-->
-
-          <!-- 
-          Area<br>
-          Disabled because the area is going to be calculated by the database
-          <input type="text" id="form-buildings-area" name="form-buildings-area" disabled><br>
-          -->
-          Geometry WKT<br>
-          <textarea rows="5" cols="100" id="form-stores-geomWkt" name="geomWkt">polygon((0 0, 1 0, 1 1, 0 1, 0 0))
-          </textarea>
-          <br>
-          <p id="form-stores-message">Selecciona la operación a realizar: </p>
-          <div class="form-login-button-container">
-            <button id="form-stores-insert">Insert</button>
-            <button id="form-stores-update">Update</button>
-            <button id="form-stores-delete">Delete</button>
-            <button id="form-stores-select">Select</button>
-          </div>
-        </form>
-        <!--################################################ ENDS OF THE STORES FORME SECTION ###########################################################################################--> 
-        <!--################################################ START OF THE MAP SECTION ###########################################################################################--> 
-
-        <div id="map"></div>
-          <!--################################################ START OF THE MAP SECTION ###########################################################################################--> 
       </div>
-        <br></br>
-      </div>
-      </div>
-    </div>
-    <script type="module" src="./main.js"></script>
-  </body>
+    </nav>
+    <!--  NAV ENDS -->
+  
+    <div id="div-main" class="container-fluid">
+      <div id="div-map-stores">
+          <div class="row text-center">
+              <div class="col-sm-12 col-md-5 col-lg-4 col-xl-3" id="div-map-side-nav">
+                  <!-- div-map-crud-Stores starts-->
+                  <div id="div-map-crud-stores">
+                      <div class="text-center" style="padding-top: 2%;">
+                          <button class="btn btn-outline-info" id="btt-building-crud-show-insert" data-toggle="tooltip"
+                              title="Show the insert form">Insert mode</button>
+                          <button class="btn btn-outline-info" id="btt-building-crud-show-select" data-toggle="tooltip"
+                              title="Show the select form">Select mode</button>
+                      </div>
+      
+                      <div id="div-map-crud-form-stores" style="padding: 5%;">
+                          <h3 id="h3-map-crud-form-title">Select a Store</h3>
+                          <form id="form-stores" onsubmit="event.preventDefault();">
+                              <!-- Prevent default avoids the form be sent on pressing a
+                              form button
+                              This is necessary because we want on click a button
+                              -->
+                              <div id="form-store_div_select_controls">
+                                  <label class="form-label" for="form-stores_txt-select-by-gid">Select by ID:</label>
+                                  <div class="row">
+                                      <div class="col">
+                                          <input type="text" class="form-control" id="form-stores-gid" name="form-stores-gid"
+                                              maxlength="5" size="5" placeholder="xxx">
+                                      </div>
+                                      <div class="col">
+                                          <button class="btn btn-primary" id="form-stores-select">Select by ID</button>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="mb-3" style="margin: auto;">
+                                  <label class="form-label" for="Client segment id">Client segment id:</label>
+                                  <textarea class="form-control" rows="5" id="form-stores-client_segment_id"
+                                      name="client_segment_id"></textarea>
+                              </div>
+                              <br>
+                              <!--client_segment_id starts-->
+                              <div class="mb-3" style="margin: auto;">
+                                  <label class="form-label" for="Store name">Store name:</label>
+                                  <textarea class="form-control" rows="5" id="form-stores-store_name"
+                                      name="store_name"></textarea>
+                              </div>
+                              <br>
+                              <!--client_segment_id ends-->
+                              <!--client_segment_id starts-->
+                              <div class="mb-3" style="margin: auto;">
+                                  <label class="form-label" for="Store name">Store name:</label>
+                                  <textarea class="form-control" rows="5" id="form-stores-store_name"
+                                      name="store_name"></textarea>
+                              </div>
+                              <br>
+                              <!--client_segment_id ends-->
+                              <!--Store_description_id starts-->
+                              <div class="mb-3" style="margin: auto;">
+                                  <label class="form-label" for="Store name">Store_description:</label>
+                                  <textarea class="form-control" id="form-stores-store_description"
+                                      name="store_description"></textarea>
+                              </div>
+                              <br>
+                              <!--Store_description_id ends-->
+                              <div class="mb-3">
+                                  <label class="form-label" for="geomWkt">Geometry in WKT:</label>
+                                  <textarea class="form-control" rows="5" id="form-stores-geomWkt" name="geomWkt"></textarea>
+                              </div>
+                              <br>
+                              <div id="form-stores_div-insert-buttons" class="text-center">
+                                  <button class="btn btn-outline-info" id="form-store_btt-start-drawing">Start
+                                      drawing</button>
+                                  <button class="btn btn-outline-info" id="form-store_btt-stop-drawing">Stop drawing</button>
+                                  <button class="btn btn-primary" id="form-clients-insert">Insert</button>
+                              </div>
+                              <div id="form-stores_div-select-buttons" class="text-center">
+                                  <button class="btn btn-primary" id="form-stores-update">Update</button>
+                                  <button class="btn btn-danger" id="form-stores-delete">Delete</button>
+                              </div>
+                          </form>
+                      </div><!-- div-map-crud-form-building -->
+                      <div id="div-message">
+                          <p id="p-message">Message:</p>
+                      </div>
+                  </div>
+                  <!-- div-map-crud-Stores end-->
+              </div>
+              <div class="col-sm-12 col-md-7 col-lg-8 col-xl-9">
+                  <div id="map" class="map"></div>
+              </div>
+          </div><!-- row text center -->
+      
+      </div><!--div-map stores-->
+  </div>
+
+</body>
+
 </html>

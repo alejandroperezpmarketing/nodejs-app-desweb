@@ -1,5 +1,5 @@
-import {login, logout} from './login';
-import { insert_client, select_client, update_client, delete_client } from './clients';
+import {login, logout} from '../login';
+import { insert_client, select_client, update_client, delete_client } from '../clients';
 
 export function registerEventsClients(){
     document.getElementById('button-login').addEventListener('click',login);
