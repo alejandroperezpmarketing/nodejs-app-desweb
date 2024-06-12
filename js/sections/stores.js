@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { URL_API, URL_GEOSERVER } from './settings';
+import { URL_API, URL_GEOSERVER } from '../settings';
 
 export function insert_store(){
     let client_segment_id=document.getElementById('form-stores-client_segment_id').value;

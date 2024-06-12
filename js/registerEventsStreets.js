@@ -1,5 +1,5 @@
-import {login, logout} from '../login';
-import { insert_street, select_street, update_street, delete_street } from '../streets';
+import {login, logout} from './login';
+import { insert_street, select_street, update_street, delete_street } from './sections/streets';
 
 export function registerEventsStreets(){
     document.getElementById('button-login').addEventListener('click',login);

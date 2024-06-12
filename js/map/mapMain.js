@@ -3,7 +3,7 @@
  * The function inimap is called from the mainInit function in js/main.js
  */
 
-function mapMain(){
+export function mapMain(){
 	//Map projection
     epsg25830 = new ol.proj.Projection({
           code: 'EPSG:25830',
