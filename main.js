@@ -14,18 +14,3 @@ import Alert from 'bootstrap/js/dist/alert';
 
 // or, specify which plugins you need:
 import { Tooltip, Toast, Popover } from 'bootstrap';
-
-function mainInit(){
-    //document.getElementById('button-login').addEventListener('click',login);
-    //document.getElementById('button-logout').addEventListener('click',logout);
-    //mapMain(); //initializes the map in the div id="map"
-	//registerEvents();
-	//setMap_MAIN();
-}
-
-  window.onload = function(){
-
-    mainInit();
-
-
-  }

@@ -520,3 +520,192 @@
 
   </div><!--div-map-->
 </div>
+
+
+
+
+
+
+
+
+
+
+
+----------------------------
+
+
+              <!-- div-map-crud-clients starts-->
+              <div id="div-map-crud-client">
+                <!-- <div class="text-center" style="padding-top: 2%;">
+            <button class="btn btn-outline-info" id="btt-building-crud-show-insert" data-toggle="tooltip"
+                title="Show the insert form">Insert mode</button>
+            <button class="btn btn-outline-info" id="btt-building-crud-show-select" data-toggle="tooltip"
+                title="Show the select form">Select mode</button>
+        </div> -->
+                <div id="form-client_store_div_select_controls">
+                    <div id="div-map-crud-form-client" style="padding: 5%;">
+                        <h3 id="h3-map-crud-form-title">Select a Client</h3>
+                        <form id="form-clients" onsubmit="event.preventDefault();">
+                            <!-- Prevent default avoids the form be sent on pressing a
+                  form button
+                  This is necessary because we want on click a button
+                  -->
+                            <div id="form-clients_div_select_controls">
+                                <label class="form-label" for="form-clients_txt-select-by-gid">Select by
+                                    ID:</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="form-clients-gid"
+                                            name="form-clients-gid" maxlength="5" size="5"
+                                            placeholder="xxx">
+                                    </div>
+                                    <div class="col">
+                                        <button class="btn btn-primary" id="form-clients-select">Select by
+                                            ID</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3" style="margin: auto;">
+                                <label class="form-label" for="Name">Name:</label>
+                                <textarea class="form-control" rows="5" id="form-clients-name"
+                                    name="name"></textarea>
+                            </div>
+                            <br>
+                            <!--client_segment_id starts-->
+                            <div class="mb-3" style="margin: auto;">
+                                <label class="form-label" for="Last name">Last name:</label>
+                                <textarea class="form-control" rows="5" id="form-clients-last_name"
+                                    name="last_name"></textarea>
+                            </div>
+                            <br>
+                            <!--client_segment_id ends-->
+
+                            <!--client_segment_id starts-->
+                            <div class="mb-3" style="margin: auto;">
+                                <label class="form-label" for="Store name">Store name:</label>
+                                <textarea class="form-control" rows="5" id="form-stores-store_name"
+                                    name="store_name"></textarea>
+                            </div>
+                            <br>
+                            <!--client_segment_id ends-->
+
+                            <!--Store_description_id starts-->
+                            <div class="mb-3" style="margin: auto;">
+                                <label class="form-label" for="Age">Age:</label>
+                                <textarea class="form-control" id="form-clients-age" name="age"></textarea>
+                            </div>
+                            <br>
+                            <!--Store_description_id ends-->
+                            <!--Sex starts-->
+                            <div class="mb-3" style="margin: auto;">
+                                <label class="form-label" for="Sex">Sex:</label>
+                                <textarea class="form-control" id="form-clients-sex" name="sex"></textarea>
+                            </div>
+                            <br>
+                            <!--Sex ends-->
+                            <div class="mb-3">
+                                <label class="form-label" for="geomWkt">Geometry in WKT:</label>
+                                <textarea class="form-control" rows="5" id="form-clients-geomWkt"
+                                    name="geomWkt"></textarea>
+                            </div>
+
+                            <br>
+                            <!-- <div id="form-clients_div-insert-buttons" class="text-center">
+                        <button class="btn btn-outline-info" id="form-building_btt-start-drawing">Start
+                            drawing</button>
+                        <button class="btn btn-outline-info" id="form-building_btt-stop-drawing">Stop
+                            drawing</button>
+                        <button class="btn btn-primary" id="form-clients-insert">Insert</button>
+                    </div> -->
+                            <div id="form-clients_div-select-buttons" class="text-center">
+                                <button class="btn btn-primary" id="form-clients-update">Update</button>
+                                <button class="btn btn-danger" id="form-clients-delete">Delete</button>
+                            </div>
+                        </form>
+                    </div><!-- div-map-crud-form-building -->
+                    <div id="div-message">
+                        <p id="p-message">Message:</p>
+                    </div>
+                </div>
+                <!-- div-map-crud-client ends-->
+
+            </div>
+            <!-- div-map-crud-clients ends-->
+            <!-- div-map-crud-streets starts-->
+            <div id="div-map-crud-calles">
+                <!-- <div class="text-center" style="padding-top: 2%;">
+            <button class="btn btn-outline-info" id="btt-streets-crud-show-insert" data-toggle="tooltip"
+                title="Show the insert form">Insert mode</button>
+            <button class="btn btn-outline-info" id="btt-streets-crud-show-select" data-toggle="tooltip"
+                title="Show the select form">Select mode</button>
+        </div> -->
+
+                <div id="div-map-crud-form-streets" style="padding: 5%;">
+                    <h3 id="h3-map-crud-form-title">Select a Street</h3>
+                    <form id="form-streets" onsubmit="event.preventDefault();">
+                        <!-- Prevent default avoids the form be sent on pressing a
+                      form button
+                      This is necessary because we want on click a button
+                      -->
+                        <!--select start-->
+                        <div id="form-streets_div_select_controls">
+                            <label class="form-label" for="form-street_txt-select-by-gid">Select by
+                                ID:</label>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" id="form-streets-gid"
+                                        name="form-streets-gid" maxlength="5" size="5" placeholder="xxx">
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-primary" id="form-streets-select_street">Select
+                                        by
+                                        ID</button>
+                                </div>
+                            </div>
+                            <!--select ends-->
+                        </div>
+
+                        <!--Nombre de la calle starts-->
+                        <div class="mb-3" style="margin: auto;">
+                            <label class="form-label" for="Nombre de la calle">Nombre de la calle:</label>
+                            <textarea class="form-control" rows="5" id="form-streets-street_name"
+                                name="street_name"></textarea>
+                        </div>
+                        <br>
+                        <!--Nombre de la calle ends-->
+                        <!--Municipio starts-->
+                        <div class="mb-3" style="margin: auto;">
+                            <label class="form-label" for="Municipio"> Municipio:</label>
+                            <textarea class="form-control" rows="5" id="form-streets-municipality"
+                                name="municipality"></textarea>
+                        </div>
+                        <br>
+                        <!--Municipio ends-->
+                        <!--Código postal_id starts-->
+                        <div class="mb-3" style="margin: auto;">
+                            <label class="form-label" for="Código postal">Código postal:</label>
+                            <textarea class="form-control" rows="5" id="form-streets-postal_code"
+                                name="postal_code"></textarea>
+                        </div>
+                        <br>
+                        <!--Código postal_id starts-->
+
+                        <!-- <div id="form-streets_div-insert-buttons" class="text-center">
+                    <button class="btn btn-outline-info" id="form-building_btt-start-drawing">Start
+                        drawing</button>
+                    <button class="btn btn-outline-info" id="form-building_btt-stop-drawing">Stop
+                        drawing</button>
+                    <button class="btn btn-primary" id="form-streets-insert_street">Insert</button>
+                </div> -->
+                        <div id="form-streets_div-select-buttons" class="text-center">
+                            <button class="btn btn-primary" id="form-streets-update_street">Update</button>
+                            <button class="btn btn-danger" id="form-streets-delete_street">Delete</button>
+                        </div>
+                    </form>
+                </div><!-- div-map-crud-form-building -->
+                <div id="div-message">
+                    <p id="p-message">Message:</p>
+                </div>
+            </div>
+            <!-- div-map-crud-streets ends-->
+
