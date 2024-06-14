@@ -1,0 +1,108 @@
+<!-- div-map-crud-stores starts-->
+<div id="div-map-crud-stores">
+    <!-- <div class="text-center" style="padding-top: 2%;">
+          <button class="btn btn-outline-info" id="btt-building-crud-show-insert" data-toggle="tooltip"
+              title="Show the insert form">Insert mode</button>
+          <button class="btn btn-outline-info" id="btt-building-crud-show-select" data-toggle="tooltip"
+              title="Show the select form">Select mode</button>
+      </div> -->
+
+    <div id="div-map-crud-form-stores" style="padding: 5%;">
+        <h3 id="h3-map-crud-form-title">Select a Store</h3>
+        <form id="form-stores" onsubmit="event.preventDefault();">
+            <!-- Prevent default avoids the form be sent on pressing a
+              form button
+              This is necessary because we want on click a button
+              -->
+            <div id="form-store_div_select_controls">
+                <label class="form-label" for="form-stores_txt-select-by-gid">Select by
+                    ID:</label>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" maxlength="5" size="5" type="text" id="form-stores-gid"
+                            name="form-stores-gid" placeholder="xxx">
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary" id="form-stores-select">Select by
+                            ID</button>
+                    </div>
+                </div>
+            </div>
+            <!--client_segment_id starts-->
+            <div class="mb-3" style="margin: auto;">
+                <label class="form-label" for="Client segment id">Client segment id:</label>
+                <textarea class="form-control" rows="5" id="form-stores-client_segment_id"
+                    name="client_segment_id"></textarea>
+            </div>
+            <br>
+            <!--client_segment_id starts-->
+
+            <!--Store name starts-->
+            <div class="mb-3" style="margin: auto;">
+                <label class="form-label" for="Store name">Store name:</label>
+                <textarea class="form-control" id="form-stores-store_name" name="store_name"></textarea>
+            </div>
+            <br>
+            <!--Store name ends-->
+            <!--Store description_id starts-->
+            <div class="mb-3" style="margin: auto;">
+                <label class="form-label" for="Store description">Store description:</label>
+                <textarea class="form-control" id="form-stores-store_description" name="store_description"></textarea>
+            </div>
+            <br>
+            <!--Store description ends-->
+            <!--Geometry start-->
+            <div class="mb-3">
+                <label class="form-label" for="geomWkt">Geometry in WKT:</label>
+                <textarea class="form-control" rows="5" id="form-stores-geomWkt" name="geomWkt"></textarea>
+            </div>
+            <br>
+            <!--Geometry ends-->
+
+
+            <!-- <div id="form-stores_div-insert-buttons" class="text-center">
+                  <button class="btn btn-outline-info" id="form-store_btt-start-drawing">Start
+                      drawing</button>
+                  <button class="btn btn-outline-info" id="form-store_btt-stop-drawing">Stop drawing</button>
+                  <button class="btn btn-primary" id="form-clients-insert">Insert</button>
+              </div> -->
+            <div id="form-stores_div-select-buttons" class="text-center">
+                <button class="btn btn-primary" id="form-stores-update">Update</button>
+                <button class="btn btn-danger" id="form-stores-delete">Delete</button>
+            </div>
+        </form>
+    </div><!-- div-map-crud-form-building -->
+    <div id="div-message">
+        <p id="form-stores-message">Message:</p>
+    </div>
+</div>
+<!-- div-map-crud-stores end-->
+
+<div id="div-main" class="container-fluid">
+    <div id="div-map-stores">
+        <div class="row text-center">
+            <div class="col-sm-12 col-md-5 col-lg-4 col-xl-3" id="div-map-side-nav">
+
+                <!-- Prevent default avoids the form be sent on pressing a
+          form button
+          This is necessary because we want on click a button
+          -->
+                <!-- <div id="form-stores_div-insert-buttons" class="text-center">
+                          <button class="btn btn-outline-info" id="form-store_btt-start-drawing">Start
+                              drawing</button>
+                          <button class="btn btn-outline-info" id="form-store_btt-stop-drawing">Stop drawing</button>
+                          <button class="btn btn-primary" id="form-clients-insert">Insert</button>
+                      </div> -->
+                <div id="
+                
+                form-stores_div-select-buttons" class="text-center">
+                    <button class="btn btn-primary" id="form-stores-update">Update</button>
+                    <button class="btn btn-danger" id="form-stores-delete">Delete</button>
+                </div>
+                </form>
+            </div><!-- div-map-crud-form-building -->
+            <div id="div-message">
+                <p id="form-stores-message">Message:</p>
+            </div>
+        </div>
+        <!-- div-map-crud-stores end-->
