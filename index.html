@@ -90,7 +90,8 @@
                                                 placeholder="xxx"><br>
                                         </div>
                                         <div class="col">
-                                            <button class="btn btn-primary" id="form-stores-select">Select by ID</button>
+                                            <button class="btn btn-primary" id="form-stores-select">Select by
+                                                ID</button>
                                         </div>
                                     </div>
                                     <!--GID ends-->
@@ -256,13 +257,16 @@
                                               -->
                                     <!--select start-->
                                     <div id="form-streets_div_select_controls">
-                                        <label class="form-label" for="form-street_txt-select-by-gid">Select by ID:</label>
+                                        <label class="form-label" for="form-street_txt-select-by-gid">Select by
+                                            ID:</label>
                                         <div class="row">
                                             <div class="col">
-                                                <input type="text" class="form-control" id="form-streets-gid" name="form-streets-gid" maxlength="5" size="5" placeholder="xxx">
+                                                <input type="text" class="form-control" id="form-streets-gid"
+                                                    name="form-streets-gid" maxlength="5" size="5" placeholder="xxx">
                                             </div>
                                             <div class="col">
-                                                <button class="btn btn-primary" id="form-streets-select_street">Select by ID</button>
+                                                <button class="btn btn-primary" id="form-streets-select_street">Select
+                                                    by ID</button>
                                             </div>
                                         </div>
                                         <!--select ends-->
@@ -271,30 +275,34 @@
                                     <!--Nombre de la calle starts-->
                                     <div class="mb-3" style="margin: auto;">
                                         <label class="form-label" for="Nombre de la calle">Nombre de la calle:</label>
-                                        <textarea class="form-control" rows="5" id="form-streets-street_name" name="street_name"></textarea>
+                                        <textarea class="form-control" rows="5" id="form-streets-street_name"
+                                            name="street_name"></textarea>
                                     </div>
                                     <br>
                                     <!--Nombre de la calle ends-->
                                     <!--Municipio starts-->
                                     <div class="mb-3" style="margin: auto;">
                                         <label class="form-label" for="Municipio"> Municipio:</label>
-                                        <textarea class="form-control" rows="5" id="form-streets-municipality" name="municipality"></textarea>
+                                        <textarea class="form-control" rows="5" id="form-streets-municipality"
+                                            name="municipality"></textarea>
                                     </div>
                                     <br>
                                     <!--Municipio ends-->
                                     <!--Código postal_id starts-->
                                     <div class="mb-3" style="margin: auto;">
                                         <label class="form-label" for="Código postal">Código postal:</label>
-                                        <textarea class="form-control" rows="5" id="form-streets-postal_code" name="postal_code"></textarea>
+                                        <textarea class="form-control" rows="5" id="form-streets-postal_code"
+                                            name="postal_code"></textarea>
                                     </div>
                                     <!--Código postal_id ends-->
                                     <!--geom starts-->
                                     <div class="mb-3" style="margin: auto;">
                                         <label class="form-label" for="geom">Geometry WKT:</label>
-                                        <textarea class="form-control" rows="5" cols="100" id="form-streets-geomWkt" name="geomWkt"></textarea>
+                                        <textarea class="form-control" rows="5" cols="100" id="form-streets-geomWkt"
+                                            name="geomWkt"></textarea>
                                     </div>
                                     <!--geom ends-->
-                                                                     
+
 
 
 
@@ -308,9 +316,12 @@
                                         <!-- <button class="btn btn-primary inline" id="form-streets-insert_street">Insert</button> -->
                                     </div>
                                     <div id="form-streets_div-select-buttons" class="text-center">
-                                        <button class="btn btn-primary inline" id="form-streets-insert_street">Insert</button>
-                                        <button class="btn btn-primary inline" id="form-streets-update_street">Update</button>
-                                        <button class="btn btn-danger inline" id="form-streets-delete_street">Delete</button>
+                                        <button class="btn btn-primary inline"
+                                            id="form-streets-insert_street">Insert</button>
+                                        <button class="btn btn-primary inline"
+                                            id="form-streets-update_street">Update</button>
+                                        <button class="btn btn-danger inline"
+                                            id="form-streets-delete_street">Delete</button>
                                     </div>
                                 </form>
                             </div><!-- div-map-crud-form-building -->
@@ -320,15 +331,21 @@
                         </div>
                         <!-- div-map-crud-form-streets ends-->
                     </div>
+                    <div class="col-sm-12 col-md-7 col-lg-8 col-xl-9" touch-action="none">
+                        <div id="map" style="position: relative; overflow: hidden; width: 100%; height: 30%; touch-action: none;padding-top: 7%; padding-bottom: 2%;" data-view="18">
+                        </div>
+                    </div>
                 </div>
-
-            </div>
-            <div class="col-sm-12 col-md-7 col-lg-8 col-xl-9">
-                <div id="map" class="map"></div>
+               
             </div>
 
-            <!-- MY JS -->
-            <script type="module" src="./main.js"></script>
+
+        </div>
+    </div>
+
+
+    <!-- MY JS -->
+    <script type="module" src="./main.js"></script>
 </body>
 
 </html>
