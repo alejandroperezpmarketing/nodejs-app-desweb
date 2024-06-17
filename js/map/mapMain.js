@@ -1,11 +1,11 @@
 import { Map, View } from 'ol';
-import OSM from 'ol/source/OSM.js';
+//import OSM from 'ol/source/OSM.js';
 import TileLayer from 'ol/layer/Tile.js';
 import { Projection } from 'ol/proj';
 import { TileWMS } from 'ol/source';
 import { URL_GEOSERVER } from '../settings';
-import VectorSource from 'ol/source/Vector';
 import VectorLayer from 'ol/layer/Vector';
+import {Vector as VectorSource} from 'ol/source.js';
 //needed to style the vector layers
 import { Circle as CircleStyle, Fill, RegularShape, Stroke, Style, Text } from 'ol/style.js';
 //import { UNSIGNED_SHORT } from 'ol/webgl';
@@ -16,6 +16,8 @@ import MousePosition from 'ol/control/MousePosition.js';
 import {ScaleLine} from 'ol/control.js';
 //Function to round coordinates
 import {createStringXY} from 'ol/coordinate.js';
+//geometry types
+import {LineString, Point} from 'ol/geom.js';
 //Groups are used to group layers
 import {Group as LayerGroup} from 'ol/layer.js';
 import {Draw, Modify} from 'ol/interaction.js';
@@ -43,6 +45,7 @@ export class MapMain {
     this.map = this.initMap();
     this.setMapControls();
     this.addDrawStoresInteraction();
+    this.addDrawStreetsInteraction();
   }
   createLayers() {
     // PNOA
@@ -168,7 +171,7 @@ export class MapMain {
     }); */
 
     //return [pnoa, catastro, stores, clients, streets]
-    return [pnoa, catastro, this.wms_stores_layer]
+    return [pnoa, catastro, this.wms_stores_layer,this.wms_streets_layer]
 
   }
   // initMap----
@@ -216,11 +219,13 @@ export class MapMain {
       undefinedHTML: '&nbsp;'
     });
 
+//////////////// asignign controls to the map ///////////////////////
     const sl = new ScaleLine({ units: 'metric' });
-
     this.map.addControl(layerSwitcher);
     this.map.addControl(mousePositionControl);
     this.map.addControl(sl);
+//////////////// asignign controls to the map ///////////////////////
+
   }
 
   ///////////////////////INTERACTIONS///////////////////////////////
@@ -271,6 +276,8 @@ export class MapMain {
   ///////////////////////STORES///////////////////////////////
 
   ///////////////////////STREETS///////////////////////////////
+
+
   addDrawStreetsInteraction(){
     /*Possible values for tipo_geom:
     * 		"Point","LineString","Polygon"
@@ -280,7 +287,7 @@ export class MapMain {
            type: ('LineString') //geometry type
          });
      
-     //When a polygon is drawn the callback function manageDrawEnd will be executed.
+     //When a line is drawn the callback function manageDrawEnd will be executed.
      //The system pass to the function a parameter e, which is an objects with
      //a lot of properties, one of which is the geometry of the geometry just drawn
      //This must be done only once
@@ -292,9 +299,9 @@ export class MapMain {
   manageStreetsDrawEnd(e){
     var feature = e.feature;//this is the feature that fired the event
     var wktFormat = new WKT();//an object to get the WKT format of the geometry
-    var wktstreetsRepresentation  = wktFormat.writeGeometry(feature.getGeometry());//geomertry in wkt
+    var wktRepresentation  = wktFormat.writeGeometry(feature.getGeometry());//geomertry in wkt
     console.log(wktRepresentation);//logs a message
-    document.getElementById("form-streets-geomWkt").value=wktstreetsRepresentation;//set the geometry in wkt format to the geomWkt input
+    document.getElementById("form-streets-geomWkt").value=wktRepresentation;//set the geometry in wkt format to the geomWkt input
   }
 
   startDrawingStreets(){
@@ -311,12 +318,14 @@ export class MapMain {
     this.wms_streets_layer.getSource().updateParams({"time": Date.now()})
   }
 
+
+
+
+
+
   ///////////////////////STREETS///////////////////////////////
 
-  ///////////////////////CLIENTS///////////////////////////////
 
-
-  ///////////////////////CLIENTS///////////////////////////////
 
 
 }

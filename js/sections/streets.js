@@ -1,5 +1,7 @@
 import axios from 'axios';
-import { URL_API, URL_GEOSERVER } from '../settings';
+import { URL_API, MAP_MAIN } from '../settings';
+
+
 
 export function insert_street(){
     let street_name=document.getElementById('form-streets-street_name').value;
@@ -120,8 +122,6 @@ export function delete_street(){
             console.log('Finally')
     });
 }
-
-
 
 export function startDrawingStreets(){
     //Enables de draw interaction
