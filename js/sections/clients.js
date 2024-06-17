@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { URL_API, URL_GEOSERVER } from '../settings';
 
+
+
 export function insert_client(){
     let name=document.getElementById('form-clients-name').value;
     let last_name=document.getElementById('form-clients-last_name').value;

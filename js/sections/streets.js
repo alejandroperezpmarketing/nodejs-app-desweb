@@ -120,3 +120,29 @@ export function delete_street(){
             console.log('Finally')
     });
 }
+
+
+
+export function startDrawingStreets(){
+    //Enables de draw interaction
+    MAP_MAIN.startDrawingStreets();
+    document.getElementById("map-message").innerHTML="Draw line interaction active"
+}
+
+export function stopDrawingStreets(){
+    //Enables de draw interaction
+    MAP_MAIN.stopDrawingStreets();
+    document.getElementById("map-message").innerHTML="Draw line interaction inactive"
+}
+
+export function reloadWMSStreetsLayer(){
+    MAP_MAIN.reloadWMSStreetsLayer();
+    document.getElementById("map-message").innerHTML="WMS streets reloaded"
+}
+
+export function clearVectorStreetsLayer(){
+    MAP_MAIN.clearVectorStreetsLayer();
+    document.getElementById("map-message").innerHTML="Vector streets layer cleared"
+}
+
+    

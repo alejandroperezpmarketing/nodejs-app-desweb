@@ -9,10 +9,9 @@ export function registerEvents(){
     document.getElementById('button-logout').addEventListener('click',logout);
 }
 
+registerEventsClients();
+registerEventsStores();
+registerEventsStreets();
+registerEvents();
 
-window.onload = function(){
-    registerEventsClients();
-    registerEventsStores();
-    registerEventsStreets();
-    registerEvents();
-}
+// window.onload = function(){}

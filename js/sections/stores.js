@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { URL_API, URL_GEOSERVER } from '../settings';
+import { MAP_MAIN, URL_API } from '../settings';
 
 export function insert_store(){
+    console.log('Insert clicked!');
     let client_segment_id=document.getElementById('form-stores-client_segment_id').value;
     let store_name=document.getElementById('form-stores-store_name').value;
     let store_description=document.getElementById('form-stores-store_description').value;
@@ -157,6 +158,29 @@ export function delete_store(){
             // always executed
             console.log('Finally')
     });
+}
+
+
+export function startDrawingStores(){
+    //Enables de draw interaction
+    MAP_MAIN.startDrawingStores();
+    document.getElementById("map-message").innerHTML="Draw poligon interaction active"
+}
+
+export function stopDrawingStores(){
+    //Enables de draw interaction
+    MAP_MAIN.stopDrawingStores();
+    document.getElementById("map-message").innerHTML="Draw poligon interaction inactive"
+}
+
+export function reloadWMSStoresLayer(){
+    MAP_MAIN.reloadWMSStoresLayer();
+    document.getElementById("map-message").innerHTML="WMS stores reloaded"
+}
+
+export function clearVectorStoresLayer(){
+    MAP_MAIN.clearVectorStoresLayer();
+    document.getElementById("map-message").innerHTML="Vector stores layer cleared"
 }
 
     

@@ -103,26 +103,23 @@
 
                                 <!--client_segment_id ends-->
                                 <div class="mb-3" style="margin: auto;">
-                                    <label class="form-label" for="geomWkt">Client segment ID:</label><br>
+                                    <label class="form-label" for="geomWkt">Client segment ID:</label>
                                     <textarea class="form-control" rows="1" cols="100"
-                                        id="form-stores-client_segment_id" name="client_segment_id"></textarea><br>
+                                        id="form-stores-client_segment_id" name="client_segment_id"></textarea>
                                     <!--client_segment_id ends-->
                                 </div>
 
                                 <!--Store name starts-->
                                 <div class="mb-3" style="margin: auto;">
-
-                                    <label class="form-label" for="geomWkt">Store name:</label><br>
+                                    <label class="form-label" for="geomWkt">Store name:</label>
                                     <textarea class="form-control" rows="2" cols="100" id="form-stores-store_name"
-                                        name="store_name">Store name</textarea><br>
+                                        name="store_name">Store name</textarea>
                                     <!--Store name ends-->
                                 </div>
                                 <!--Store description starts-->
                                 <label class="form-label" for="geomWkt">Store description:</label>
-
-                                <br>
                                 <textarea class="form-control" rows="2" cols="100" id="form-stores-store_description"
-                                    name="store_description">Store description</textarea><br>
+                                    name="store_description">Store description</textarea>
                                 <!--Store description ends-->
 
                                 <!-- 
@@ -133,6 +130,19 @@
                                 <label class="form-label" for="geomWkt">Geometry WKT:</label>
                                 <textarea class="form-control" rows="3" cols="100" id="form-stores-geomWkt"
                                     name="geomWkt">polygon((0 0, 1 0, 1 1, 0 1, 0 0))</textarea>
+                                <br>
+
+                                <div id="form-stores_div-insert-buttons" class="text-center">
+                                    <button class="btn btn-outline-info" id="form-stores_btt-start-drawing">Start
+                                        drawing</button>
+                                    <button class="btn btn-outline-info" id="form-stores_btt-stop-drawing">Stop
+                                        drawing</button>
+                                    <button class="btn btn-outline-info" id="form-stores_btt-clear-drawing">Clear
+                                        store drawing</button>
+                                    <button class="btn btn-outline-info" id="form-stores_btt-reload-drawing">Reload
+                                        drawing</button>
+                                </div>
+                                <br>
                                 <p id="p-message">Selecciona la operación a realizar: </p>
                                 <div class="form-login-button-container">
                                     <div id="form-stores_div-insert-buttons" class="text-center">
@@ -212,14 +222,21 @@
                                             <textarea class="form-control" rows="2" cols="100" id="form-clients-geomWkt"
                                                 name="geomWkt"></textarea>
                                         </div>
-                                        <div id="form-clients_div-insert-buttons" class="text-center">
-                                            <!-- <button class="btn btn-outline-info" id="form-building_btt-start-drawing">Start
-                                                    drawing</button>
-                                                <button class="btn btn-outline-info" id="form-building_btt-stop-drawing">Stop
-                                                    drawing</button> 
-                                                    <button class="btn btn-primary inline" id="form-clients-insert">Insert</button>-->
-
-                                        </div>
+                                        <br>
+                                        <!-- <div id="form-clients_div-insert-buttons" class="text-center">
+                                            <button class="btn btn-outline-info"
+                                                id="form-client_btt-start-drawing">Start
+                                                drawing</button>
+                                            <button class="btn btn-outline-info" id="form-client_btt-stop-drawing">Stop
+                                                drawing</button>
+                                            <button class="btn btn-outline-info"
+                                                id="form-client_btt-clear-drawing">Clear
+                                                client drawing</button>
+                                            <button class="btn btn-outline-info"
+                                                id="form-client_btt-reload-drawing">Reload
+                                                drawing</button>
+                                        </div> -->
+                                        <br>
                                         <p id="message">Selecciona la operación a realizar: </p>
                                         <div id="form-clients_div-select-buttons" class="text-center">
                                             <button class="btn btn-primary inline"
@@ -302,19 +319,18 @@
                                             name="geomWkt"></textarea>
                                     </div>
                                     <!--geom ends-->
-
-
-
-
-
-
+                                    <br>
                                     <div id="form-streets_div-insert-buttons" class="text-center">
-                                        <!-- <button class="btn btn-outline-info inline" id="form-building_btt-start-drawing">Start
+                                        <button class="btn btn-outline-info" id="form-streets_btt-start-drawing">Start
                                             drawing</button>
-                                        <button class="btn btn-outline-info inline" id="form-building_btt-stop-drawing">Stop
-                                            drawing</button> -->
-                                        <!-- <button class="btn btn-primary inline" id="form-streets-insert_street">Insert</button> -->
+                                        <button class="btn btn-outline-info" id="form-streets_btt-stop-drawing">Stop
+                                            drawing</button>
+                                        <button class="btn btn-outline-info" id="form-streets_btt-clear-drawing">Clear
+                                            streets drawing</button>
+                                        <button class="btn btn-outline-info" id="form-streets_btt-reload-drawing">Reload
+                                            drawing</button>
                                     </div>
+                                    <br>
                                     <div id="form-streets_div-select-buttons" class="text-center">
                                         <button class="btn btn-primary inline"
                                             id="form-streets-insert_street">Insert</button>
@@ -332,11 +348,14 @@
                         <!-- div-map-crud-form-streets ends-->
                     </div>
                     <div class="col-sm-12 col-md-7 col-lg-8 col-xl-9" touch-action="none">
-                        <div id="map" style="position: relative; overflow: hidden; width: 100%; height: 30%; touch-action: none;padding-top: 7%; padding-bottom: 2%;" data-view="18">
+                        <div id="map"
+                            style="position: relative; overflow: hidden; width: 100%; height: 30%; touch-action: none;padding-top: 2%; padding-bottom: 10%;"
+                            data-view="18">
                         </div>
+                        <p id="map-message"></p>
                     </div>
                 </div>
-               
+
             </div>
 
 
