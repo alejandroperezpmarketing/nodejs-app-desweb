@@ -20,7 +20,7 @@ import {createStringXY} from 'ol/coordinate.js';
 import {LineString, Point} from 'ol/geom.js';
 //Groups are used to group layers
 import {Group as LayerGroup} from 'ol/layer.js';
-import {Draw, Modify} from 'ol/interaction.js';
+import {Draw, Modify, Select, defaults as defaultInteractions} from 'ol/interaction.js';
 import {WKT} from 'ol/format'
 
 //https://openlayers.org/en/latest/examples/wms-tiled.html//
@@ -33,6 +33,8 @@ export class MapMain {
     this.wms_stores_layer = undefined;//the geoserver wms layer
     this.wms_clients_layer = undefined;//the geoserver wms layer
     this.wms_streets_layer = undefined;//the geoserver wms layer
+    this.storeSelect = undefined;
+
     // this.vector_clients_layer_source_draw = undefined;
     // this.vector_clients_layer = undefined;
     //this.vector_clients_layer_draw_interaction = undefined;//the draw interaction

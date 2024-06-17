@@ -1,4 +1,5 @@
 import { insert_street, select_street, update_street, delete_street, startDrawingStreets, stopDrawingStreets, reloadWMSStreetsLayer, clearVectorStreetsLayer  } from './sections/streets';
+import {showDivStreetsNav} from './showHideElements';
 
 export function registerEventsStreets(){
     document.getElementById('form-streets-insert_street').addEventListener('click',insert_street);
@@ -9,6 +10,7 @@ export function registerEventsStreets(){
     document.getElementById('form-streets_btt-stop-drawing').addEventListener('click',stopDrawingStreets);
     document.getElementById('form-streets_btt-reload-drawing').addEventListener('click',reloadWMSStreetsLayer);
     document.getElementById('form-streets_btt-clear-drawing').addEventListener('click',clearVectorStreetsLayer);
+    document.getElementById('streets-nav-link').addEventListener('click',showDivStreetsNav);
 
 
 }

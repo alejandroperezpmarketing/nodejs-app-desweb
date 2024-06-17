@@ -1,4 +1,5 @@
 import { insert_client, select_client, update_client, delete_client } from './sections/clients';
+import {showDivClientsNav} from './showHideElements';
 
 
 export function registerEventsClients(){
@@ -9,5 +10,6 @@ export function registerEventsClients(){
     document.getElementById('form-clients-delete').addEventListener('click',delete_client);
     //document.getElementById('form-client_btt-start-drawing').addEventListener('click',start_drawing);
     //document.getElementById('form-client_btt-stop-drawing').addEventListener('click',stop-drawing);
+    document.getElementById('clients-nav-link').addEventListener('click',showDivClientsNav);
 
 }

@@ -1,4 +1,5 @@
 import { insert_store, select_store, update_store, delete_store, startDrawingStores, stopDrawingStores, reloadWMSStoresLayer, clearVectorStoresLayer } from './sections/stores';
+import {showDivStoresNav} from './showHideElements';
 
 export function registerEventsStores(){
     console.log('Insert clicked!');
@@ -10,6 +11,5 @@ export function registerEventsStores(){
     document.getElementById('form-stores_btt-stop-drawing').addEventListener('click',stopDrawingStores);
     document.getElementById('form-stores_btt-reload-drawing').addEventListener('click',reloadWMSStoresLayer);
     document.getElementById('form-stores_btt-clear-drawing').addEventListener('click',clearVectorStoresLayer);
-
-
+    document.getElementById('stores-nav-link').addEventListener('click',showDivStoresNav);
 }

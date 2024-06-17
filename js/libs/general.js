@@ -23,7 +23,7 @@ function libs_general_hideAllDivsInDiv(divName) {
 * @param {str} divName - string with the id of the div in the divParentName to show
 * @return none
 */
-function libs_general_hideAllDivsInDivExceptOne(divParentName, divName) {
+export function libs_general_hideAllDivsInDivExceptOne(divParentName, divName) {
 	libs_general_hideAllDivsInDiv(divParentName);
 	var selector="#" + divName;
 	var div= document.querySelector(selector);//selects only one
@@ -31,13 +31,13 @@ function libs_general_hideAllDivsInDivExceptOne(divParentName, divName) {
 }
 
 
-function libs_general_showElement(elementName) {
+export function libs_general_showElement(elementName) {
 	var selector="#" + elementName;
 	var element= document.querySelector(selector);//selects only one
 	element.style.display = 'block';
 }
 
-function libs_general_hideElement(elementName) {
+export function libs_general_hideElement(elementName) {
 	var selector="#" + elementName;
 	var element= document.querySelector(selector);//selects only one
 	element.style.display = 'none';
@@ -51,7 +51,7 @@ function libs_general_hideElement(elementName) {
 * @param {vector} vectorCoordinates - Vector coordinates to transform: [[x, y],[x, y], ...]
 * @return string - 'x,y x,y,...'
 */
-function lib_general_geojsonCoordinatesToWktString(vectorCoordinates){
+export function lib_general_geojsonCoordinatesToWktString(vectorCoordinates){
 	var s="";
 	var np=vectorCoordinates.length;
 	for (var i = 0; i < np; i ++){

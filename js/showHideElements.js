@@ -1,19 +1,35 @@
+import { libs_general_hideElement, libs_general_showElement, libs_general_hideAllDivsInDivExceptOne} from "./libs/general";
+
 /*MENU*/
 //function showDivHome(){
 //    libs_general_hideAllDivsInDivExceptOne("div-main", "div-home") 
 //}
-function showDivMap(){
+/* function showDivMap(){
     libs_general_hideAllDivsInDivExceptOne("div-main", "div-map") 
+} */
+
+
+export function showDivClientsNav(){
+	libs_general_showElement('div-map-crud-client');
+	libs_general_hideElement('div-map-crud-calles');
+	libs_general_hideElement('div-map-crud-form-stores');
 }
-function showDivClients(){
-    libs_general_hideAllDivsInDivExceptOne("div-main", "div-map-clients") 
+
+export function showDivStreetsNav(){
+	libs_general_showElement('div-map-crud-calles');
+	libs_general_hideElement('div-map-crud-client');
+	libs_general_hideElement('div-map-crud-form-stores');
 }
-function showDivStreets(){
-    libs_general_hideAllDivsInDivExceptOne("div-main", "div-map-streets") 
+
+export function showDivStoresNav(){
+	libs_general_showElement('div-map-crud-form-stores');
+	libs_general_hideElement('div-map-crud-calles');
+	libs_general_hideElement('div-map-crud-client');
 }
-function showDivStores(){
-    libs_general_hideAllDivsInDivExceptOne("div-main", "div-map-stores") 
-}
+
+
+
+
 
 /* function showDivHelp(){
     libs_general_hideAllDivsInDivExceptOne("div-main", "div-help") 
@@ -29,19 +45,6 @@ function showDivDeleteAllStores(){
     libs_general_hideAllDivsInDivExceptOne("div-main", "div-delete-all-buildings");
 }
 /*CRUD*/
-function showStoreCrudInSidenav(){
-	/*There is only one form, but in case you add an other */
-	libs_general_hideAllDivsInDivExceptOne("div-map-side-nav", "div-map-crud-stores");
-}
-
-function showStoreCrudInSidenav(){
-	/*There is only one form, but in case you add an other */
-	libs_general_hideAllDivsInDivExceptOne("div-map-side-nav", "div-map-crud-client");
-}
-function showStoreCrudInSidenav(){
-	/*There is only one form, but in case you add an other */
-	libs_general_hideAllDivsInDivExceptOne("div-map-side-nav", "div-map-crud-calles");
-}
 
 function showStoreForm_mode_insert(){
 	/*Muestra los botones de comenzar y terminar de dibujar, y el botón insert
