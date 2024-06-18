@@ -19,17 +19,25 @@
                 </a>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mr-auto">
-                        
+
                         <li class="nav-item">
-                            <a class="nav-link" id="stores-nav-link" onclick="console.log('Stores nav tab clicked!')"  href="#">Tiendas</a>
+                            <a class="nav-link" id="stores-nav-link" onclick="console.log('Stores nav tab clicked!')"
+                                href="#">Tiendas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="streets-nav-link" onclick="console.log('Streets nav tab clicked!')" href="#">Calles</a>
+                            <a class="nav-link" id="streets-nav-link" onclick="console.log('Streets nav tab clicked!')"
+                                href="#">Calles</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" id="clients-nav-link" onclick="console.log('Clients nav tab clicked!')" href="#">Clientes</a>
+                        <li class="nav-item">
+                            <a class="nav-link" id="clients-nav-link" onclick="console.log('Clients nav tab clicked!')"
+                                href="#">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="get-help" onclick="console.log('Help nav tab clicked!')"
+                                href="#">Help</a>
                         </li>
                     </ul>
+
                     <br>
                     <form class="form-inline" style="margin-left: 2%;">
                         <div class="input-group">
@@ -66,8 +74,11 @@
                 </div>
             </div>
         </nav>
+
         <!--  NAV ENDS -->
-        <div id="div-main" class="container-fluid">
+        <div id="div-main" class="container-xxl">
+            
+
             <div id="div-map">
                 <div class="row text-center">
                     <div class="col-sm-12 col-md-5 col-lg-4 col-xl-3" id="div-map-side-nav">
@@ -280,7 +291,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <input type="text" class="form-control" id="form-streets-gid"
-                                                    name="form-streets-gid" maxlength="5" size="5" placeholder="xxx">
+                                                    name="form-streets-gid" maxlength="5" size="2" placeholder="xxx">
                                             </div>
                                             <div class="col">
                                                 <button class="btn btn-primary" id="form-streets-select_street">Select
@@ -293,7 +304,7 @@
                                     <!--Nombre de la calle starts-->
                                     <div class="mb-3" style="margin: auto;">
                                         <label class="form-label" for="Nombre de la calle">Nombre de la calle:</label>
-                                        <textarea class="form-control" rows="5" id="form-streets-street_name"
+                                        <textarea class="form-control" rows="2" id="form-streets-street_name"
                                             name="street_name"></textarea>
                                     </div>
                                     <br>
@@ -301,7 +312,7 @@
                                     <!--Municipio starts-->
                                     <div class="mb-3" style="margin: auto;">
                                         <label class="form-label" for="Municipio"> Municipio:</label>
-                                        <textarea class="form-control" rows="5" id="form-streets-municipality"
+                                        <textarea class="form-control" rows="2" id="form-streets-municipality"
                                             name="municipality"></textarea>
                                     </div>
                                     <br>
@@ -309,14 +320,14 @@
                                     <!--Código postal_id starts-->
                                     <div class="mb-3" style="margin: auto;">
                                         <label class="form-label" for="Código postal">Código postal:</label>
-                                        <textarea class="form-control" rows="5" id="form-streets-postal_code"
+                                        <textarea class="form-control" rows="2" id="form-streets-postal_code"
                                             name="postal_code"></textarea>
                                     </div>
                                     <!--Código postal_id ends-->
                                     <!--geom starts-->
                                     <div class="mb-3" style="margin: auto;">
                                         <label class="form-label" for="geom">Geometry WKT:</label>
-                                        <textarea class="form-control" rows="5" cols="100" id="form-streets-geomWkt"
+                                        <textarea class="form-control" rows="3" cols="100" id="form-streets-geomWkt"
                                             name="geomWkt"></textarea>
                                     </div>
                                     <!--geom ends-->
@@ -347,6 +358,8 @@
                             </div>
                         </div>
                         <!-- div-map-crud-form-streets ends-->
+
+
                     </div>
                     <div class="col-sm-12 col-md-7 col-lg-8 col-xl-9" touch-action="none">
                         <div id="map"
@@ -355,12 +368,13 @@
                         </div>
                         <p id="map-message"></p>
                     </div>
+
                 </div>
 
             </div>
-
-
         </div>
+        
+
     </div>
 
 

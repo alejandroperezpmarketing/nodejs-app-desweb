@@ -13,27 +13,31 @@ export function showDivClientsNav(){
 	libs_general_showElement('div-map-crud-client');
 	libs_general_hideElement('div-map-crud-calles');
 	libs_general_hideElement('div-map-crud-form-stores');
+	//libs_general_hideElement('div-help');
+
 }
 
 export function showDivStreetsNav(){
 	libs_general_showElement('div-map-crud-calles');
 	libs_general_hideElement('div-map-crud-client');
 	libs_general_hideElement('div-map-crud-form-stores');
+	//libs_general_hideElement('div-help');
+
 }
 
 export function showDivStoresNav(){
 	libs_general_showElement('div-map-crud-form-stores');
-	libs_general_hideElement('div-map-crud-calles');
 	libs_general_hideElement('div-map-crud-client');
+	libs_general_hideElement('div-map-crud-calles');
+	//libs_general_hideElement('div-help');
 }
 
 
 
-
-
-/* function showDivHelp(){
+export function showDivHelp(){
     libs_general_hideAllDivsInDivExceptOne("div-main", "div-help") 
-} */
+}
+
 function showDivLogin(){
     libs_general_hideAllDivsInDivExceptOne("div-main", "div-login") 
 }

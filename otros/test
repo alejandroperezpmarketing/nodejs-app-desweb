@@ -1,0 +1,65 @@
+ <div id="div-help">
+                <div class="row text-center">
+                    <h1>Help</h1>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>You can insert, delete, update and select Stores,Clients and Streets</h4>
+                        <ul>
+                            <li class="list-inline">
+                                <h5>To Draw</h5>
+                                <p>Click on the <i><b>buttom you wat to draw on the</b></i> menu :
+                                    Clientes(point), Tiendas(polygon) o Calles(streets), and click on the
+                                    <b><b>Start drawing</b></i>
+                                        , and draw a polygon, line or point in the map. To finish the
+                                        polygon drawing you have to
+                                        single
+                                        click on the first point of the polygon, and to finish the line you
+                                        need to double click at the end of your drawing
+                                </p>
+
+                                <p>Type all the information details requested on the respective form and
+                                    press the button <b><i>Insert</i></b></p>
+                                <p><b>New Stores, have to be separated at
+                                        least 20 meters of already existing Stores</b></p>
+                            </li>
+                            <li class="list-inline">
+                                <h5>Select</h5>
+                                <p>Click on the <i><b>Clientes, Tiendas or Streets button on the</b></i>
+                                    menu</i>
+                                    and type the ID, and press <i><b>Select by ID</b></i>. </p>
+
+                                <p>Alternatively you can select the element by typing X, Y cooordinates en
+                                    the
+                                    <i><b>Select by coordinates</b></i> box, and clicking on <i><b>Select by
+                                            XY</b></i> button.
+                                </p>
+
+                                <p>By pressing <i><b>Click on the map</b></i> you can get the coordinates
+                                    from
+                                    the map</p>
+                            </li>
+                            <li class="list-inline">
+                                <h5>Update</h5>
+                                <p>Type an ID, the new form detail requested, the new geometry and press
+                                    <b><i>Update</i></b>
+                                </p>
+                            </li>
+                            <li class="list-inline">
+                                <h5>Delete</h5>
+                                <p>Type an ID and press <b><i>Delete</i></b></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+</div>
+
+
+<main role="main" id="div-help" class="container">
+
+    <div class="starter-template">
+      <h1>Bootstrap starter template</h1>
+      <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    </div>
+
+</main><!-- /.container -->

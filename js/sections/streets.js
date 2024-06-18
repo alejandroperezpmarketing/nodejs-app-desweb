@@ -125,22 +125,26 @@ export function delete_street(){
 
 export function startDrawingStreets(){
     //Enables de draw interaction
+    console.log('startDrawingStreets activated');
     MAP_MAIN.startDrawingStreets();
     document.getElementById("map-message").innerHTML="Draw line interaction active"
 }
 
 export function stopDrawingStreets(){
     //Enables de draw interaction
+    console.log('startDrawingStreets deactivated');
     MAP_MAIN.stopDrawingStreets();
     document.getElementById("map-message").innerHTML="Draw line interaction inactive"
 }
 
 export function reloadWMSStreetsLayer(){
+    console.log('reloadWMSStreetsLayer activated');
     MAP_MAIN.reloadWMSStreetsLayer();
     document.getElementById("map-message").innerHTML="WMS streets reloaded"
 }
 
 export function clearVectorStreetsLayer(){
+    console.log('clearVectorStreetsLayer activated');
     MAP_MAIN.clearVectorStreetsLayer();
     document.getElementById("map-message").innerHTML="Vector streets layer cleared"
 }

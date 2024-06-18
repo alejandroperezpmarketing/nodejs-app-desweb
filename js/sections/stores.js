@@ -163,22 +163,26 @@ export function delete_store(){
 
 export function startDrawingStores(){
     //Enables de draw interaction
+    console.log('startDrawingStores activated');
     MAP_MAIN.startDrawingStores();
     document.getElementById("map-message").innerHTML="Draw poligon interaction active"
 }
 
 export function stopDrawingStores(){
     //Enables de draw interaction
+    console.log('stopDrawingStores deactivated');
     MAP_MAIN.stopDrawingStores();
     document.getElementById("map-message").innerHTML="Draw poligon interaction inactive"
 }
 
 export function reloadWMSStoresLayer(){
+    console.log('reloadWMSStoresLayer activated');
     MAP_MAIN.reloadWMSStoresLayer();
     document.getElementById("map-message").innerHTML="WMS stores reloaded"
 }
 
 export function clearVectorStoresLayer(){
+    console.log('clearVectorStoresLayer activated');
     MAP_MAIN.clearVectorStoresLayer();
     document.getElementById("map-message").innerHTML="Vector stores layer cleared"
 }

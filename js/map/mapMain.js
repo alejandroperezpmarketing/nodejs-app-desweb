@@ -173,7 +173,7 @@ export class MapMain {
     }); */
 
     //return [pnoa, catastro, stores, clients, streets]
-    return [pnoa, catastro, this.wms_stores_layer,this.wms_streets_layer]
+    return [pnoa, catastro, this.wms_stores_layer,this.wms_streets_layer,this.vector_streets_layer]
 
   }
   // initMap----
@@ -193,7 +193,7 @@ export class MapMain {
         projection: epsg25830,
         maxZoom: 28, minZoom: 1,
         center: [724950.649, 4371212.645], //the initial center of the map
-        zoom: 2 //the initial zoom
+        zoom: 3 //the initial zoom
       }),
     });
     return map;
@@ -241,7 +241,8 @@ export class MapMain {
     * */
     this.vector_stores_layer_draw_interaction = new Draw({
            source: this.vector_stores_layer_source_draw, //source of the layer where the poligons will be drawn
-           type: ('Polygon') //geometry type
+           type: ('Polygon'), //geometry type
+           snapTolerance: 1 // Pixel distance for snapping to the drawing finish. Must be greater than 0.
          });
      
      //When a polygon is drawn the callback function manageDrawEnd will be executed.
@@ -286,7 +287,7 @@ export class MapMain {
     * */
     this.vector_streets_layer_draw_interaction = new Draw({
            source: this.vector_streets_layer_source_draw, //source of the layer where the poligons will be drawn
-           type: ('LineString') //geometry type
+           type: ('LineString'), //geometry type
          });
      
      //When a line is drawn the callback function manageDrawEnd will be executed.
