@@ -173,7 +173,7 @@ export class MapMain {
     }); */
 
     //return [pnoa, catastro, stores, clients, streets]
-    return [pnoa, catastro, this.wms_stores_layer,this.wms_streets_layer,this.vector_streets_layer]
+    return [pnoa, catastro, this.wms_stores_layer,this.wms_streets_layer,this.vector_streets_layer,this.vector_stores_layer]
 
   }
   // initMap----
